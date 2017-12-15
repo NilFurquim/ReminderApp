@@ -8,26 +8,25 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.Vector;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ArrayList<Reminder> reminders;
+    List<Reminder> reminders;
     ListView list_reminder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity
         list_reminder = (ListView) findViewById(R.id.list_reminder);
 
         reminders = new ArrayList<>();
-//        ReminderList adapter = new ReminderList(this, (ArrayList<Reminder>) reminders.clone());
         ReminderList adapter = new ReminderList(this, reminders);
         list_reminder.setAdapter(adapter);
     }
@@ -105,11 +103,13 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if (requestCode == 1) {
+            Log.v("RESULT", "REQUEST CODE 1");
             if(resultCode == Activity.RESULT_OK){
+                Log.v("RESULT", "RESULT OK");
                 Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v.vibrate(500);
                 String new_name = data.getStringExtra("new_name");
-                String new_time = data.getStringExtra("new_time");
+                String new_time = "  Hora : " + data.getStringExtra("new_time");
                 String new_audio_path = data.getStringExtra("new_audio_path");
                 byte[] imageByteArray = data.getByteArrayExtra("new_image");
                 Bitmap new_image = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.length);

@@ -2,7 +2,6 @@ package nilfurquim.reminderapp;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -12,18 +11,14 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ButtonBarLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TimePicker;
 
 import java.io.ByteArrayOutputStream;
@@ -72,8 +67,11 @@ public class NewRemedio extends AppCompatActivity {
                 TimePicker timePicker = (TimePicker) findViewById(R.id.timepicker_new_remedio);
 
                 Intent returnIntent = new Intent();
-                returnIntent.putExtra("new_name",editText.getText());
-                returnIntent.putExtra("new_time",timePicker.toString());
+                String name = editText.getText().toString();
+                returnIntent.putExtra("new_name", name);
+                Log.v("ONCLICK", name);
+                returnIntent.putExtra("new_time",timePicker.getCurrentHour().toString() +
+                    ":" + timePicker.getCurrentMinute().toString());
                 returnIntent.putExtra("new_audio_path",mFileName);
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
@@ -108,6 +106,8 @@ public class NewRemedio extends AppCompatActivity {
                 mStartRecording = !mStartRecording;
             }
         });
+
+
 
         playButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

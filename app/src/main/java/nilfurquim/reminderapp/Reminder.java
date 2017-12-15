@@ -12,6 +12,12 @@ public class Reminder {
     String audioPath;
     Bitmap image;
 
+    public Reminder(String name, String time, String audioPath) {
+        this.name = name;
+        this.time = time;
+        this.audioPath = audioPath;
+    }
+
     public Reminder(String name, String time, String audioPath, Bitmap image) {
         this.name = name;
         this.time = time;

@@ -1,35 +1,33 @@
 {
   "project_info": {
-    "project_number": "89558516877",
-    "firebase_url": "https://reminderapp-a70f4.firebaseio.com",
-    "project_id": "reminderapp-a70f4",
-    "storage_bucket": "reminderapp-a70f4.appspot.com"
+    "project_number": "210781484346",
+    "project_id": "reminderapp-9290d"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:89558516877:android:34aab38fce538d2a",
+        "mobilesdk_app_id": "1:210781484346:android:34aab38fce538d2a",
         "android_client_info": {
           "package_name": "nilfurquim.reminderapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "89558516877-25oofhu4q8ibb67bn566a3il90ip2n7b.apps.googleusercontent.com",
+          "client_id": "210781484346-559u30lcd6a0t20bja015a1sao6nljn1.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "210781484346-3qk3m402256u3clhhdf4sjapcva2l1s1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "nilfurquim.reminderapp",
-            "certificate_hash": "2108679242e6c4b875ffd2e4ccccae6f06474000"
+            "certificate_hash": "5ee85a80ad24ce41aa1ec2401134ec4c27a49009"
           }
-        },
-        {
-          "client_id": "89558516877-ko4q08bmvi8ko7k8sbrju84jfo6biqhg.apps.googleusercontent.com",
-          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCqCoKrnZyiIPitZ2kDzVhDtz5QDgWNrRM"
+          "current_key": "AIzaSyB1IZV5JWq-xKXn4Slu7CubPW08kPPjldM"
         }
       ],
       "services": {
@@ -37,16 +35,11 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "89558516877-ko4q08bmvi8ko7k8sbrju84jfo6biqhg.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
-          "status": 2
+          "status": 1
         }
       }
     }
